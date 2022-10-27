@@ -22,16 +22,16 @@ export default function Carousel() {
   const [slider, setSlider] = React.useState<Slider | null>(null);
 
   const cards = [
-    'https://picsum.photos/2000/2000',
-    'https://picsum.photos/id/1/2000/2000',
-    'https://picsum.photos/id/2/2000/2000',
+    'https://picsum.photos/1000',
+    'https://picsum.photos/id/1/1000',
+    'https://picsum.photos/id/2/1000',
   ];
 
   return (
     <Box
       position={'relative'}
-      height={{ base: '30vh', md: '50vh' }}
-      width={{ base: '80vw', md: '60vw' }}
+      height={{ base: '30vh', md: '55vh' }}
+      width={{ base: '80vw', md: '50vw' }}
       overflow={'hidden'}
     >
       {/* CSS files for react-slick */}
@@ -79,7 +79,7 @@ export default function Carousel() {
         {cards.map((url, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height={{base:'md', md:'5xl'}}
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
