@@ -22,10 +22,7 @@ const Home = ({data}: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default Home;
 export async function getStaticProps() {
   const data = await loadText()
-  console.log(data);
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
   return {
     props: {
       data,

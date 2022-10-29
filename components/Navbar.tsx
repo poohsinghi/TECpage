@@ -21,6 +21,8 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+import Image from 'next/image';
+import icon from '../public/favicon.ico'
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
@@ -55,7 +57,8 @@ import {
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
               color={useColorModeValue('gray.800', 'white')}>
-              Logo
+              {/* <Image src={icon} /> */}
+              TEC
             </Text>
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -75,18 +78,18 @@ import {
               variant={'link'}
               // href={'#'}
               >
-              Sign In
+              ibhcras iain 
             </Button>
             <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'pink.400'}
+              bg={'blue.800'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'blue.300',
               }}>
-              Sign Up
+              CONTACT US
             </Button>
           </Stack>
         </Flex>
@@ -251,11 +254,11 @@ import {
   
   const NAV_ITEMS: Array<NavItem> = [
     {
-      label: 'Inspiration',
+      label: 'PRODUCTS',
       children: [
         {
-          label: 'Explore Design Work',
-          subLabel: 'Trending Design to inspire you',
+          label: ' sisque vulput ullamcor',
+          subLabel: 'Est ligula ridicul isque vulput ullamcor',
           href: '#',
         },
         {
@@ -266,11 +269,11 @@ import {
       ],
     },
     {
-      label: 'Find Work',
+      label: 'LOCATION',
       children: [
         {
-          label: 'Job Board',
-          subLabel: 'Find your dream design job',
+          label: 'lla itnunc morbi ut',
+          subLabel: 'Nascetur nullain lla itnunc morbi ut.',
           href: '#',
         },
         {
@@ -281,11 +284,11 @@ import {
       ],
     },
     {
-      label: 'Learn Design',
+      label: 'RESOURCES',
       href: '#',
     },
-    {
-      label: 'Hire Designers',
-      href: '#',
-    },
+    // {
+    //   label: 'Hire Designers',
+    //   href: '#',
+    // },
   ];
