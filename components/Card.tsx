@@ -104,7 +104,7 @@ export default function Card(props: { data: string }) {
            onClick={(e: any) => {
             console.log(e.target.outerText);
           }}
-          className=" w-4/5 bg-navy p-1"
+          className=" w-4/5 bg-navy px-6 py-3 h-12"
         >
           <Text
             color={'white'}
@@ -120,12 +120,12 @@ export default function Card(props: { data: string }) {
           onClick={(e: any) => {
             console.log(e.target.outerText);
           }}
-          className=" w-4/5 bg-white p-1 border-navy border mt-2 p-1"
+          className=" w-4/5 bg-white px-6  h-12 border-navy border mt-2"
         >
           <Text
             className=" text-navy"
-            fontSize="16px"
-            lineHeight="22px"
+            fontSize={{base:'5px',sm:'5px',xl:'16px'}}
+            lineHeight={{base:'15px',xl:"22px"}}
             fontWeight="500"
             textTransform="uppercase"
           >
