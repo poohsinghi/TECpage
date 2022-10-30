@@ -265,10 +265,10 @@ export default function Form() {
             </FormControl>
           </VStack>
         </SimpleGrid>
-        <button type="submit" className="w-1/5 bg-navy py-2 px-3 mt-5">
+        <button type="submit" className="min-w-[15%] bg-navy py-2 px-3 mt-5">
           <Text
             color={'white'}
-            fontSize={{ base: '8px', md: '14px' }}
+            fontSize={{ base: '10px', md: '14px' }}
             lineHeight="22px"
             fontWeight="500"
             textTransform="uppercase"
