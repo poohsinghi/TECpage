@@ -268,7 +268,7 @@ export default function Form() {
         <button type="submit" className="w-1/5 bg-navy py-2 px-3 mt-5">
           <Text
             color={'white'}
-            fontSize={{ base: '5px', md: '14px' }}
+            fontSize={{ base: '8px', md: '14px' }}
             lineHeight="22px"
             fontWeight="500"
             textTransform="uppercase"
