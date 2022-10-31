@@ -25,7 +25,7 @@ export default function Card(props: { data: string }) {
   const mobileDisplay = useBreakpointValue({ base: 'flex', md: 'none' });
   const text = useBreakpointValue({ base: '16px', md: '14px' });
   return (
-    <Box maxHeight={'80%'} overflow="auto">
+    <Box maxHeight={'70%'} overflow="auto">
       <Heading className="text-navy pb-2" fontSize="24px" lineHeight="31px">
         {props.data}
       </Heading>
@@ -124,7 +124,7 @@ export default function Card(props: { data: string }) {
         >
           <Text
             className=" text-navy"
-            fontSize={{base:'5px',sm:'5px',xl:'16px'}}
+            fontSize={{base:'10px',sm:'10px',xl:'16px'}}
             lineHeight={{base:'15px',xl:"22px"}}
             fontWeight="500"
             textTransform="uppercase"
