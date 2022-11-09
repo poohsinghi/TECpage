@@ -46,7 +46,7 @@ const components = {
 
 export default function Form() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [submittedData, setSubmittedData] = useState("");
+  const [submittedData, setSubmittedData] = useState('');
   const phoneRegExp = /^[1-9][0-9]{7}$/;
 
   const validationSchema = Yup.object().shape({
@@ -74,18 +74,13 @@ export default function Form() {
   const watchCentre = watch('centre');
   useEffect(() => {
     if (watchCentre) {
-      setValue(
-        'venue',
-        watchCentre &&
-          mockVenue[mockVenue.map((el) => el.centre).indexOf(watchCentre)].venue.map((el) => el)[0]
-            .value,
-      );
+      setValue('venue', mockVenue.find((el) => el.centre === watchCentre)?.venue[0].value);
     }
   }, [setValue, watchCentre]);
   const onSubmit = (data: any) => {
     console.log(data);
-    setSubmittedData(data)
-    onOpen()
+    setSubmittedData(data);
+    onOpen();
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full ">
@@ -138,16 +133,14 @@ export default function Form() {
                     components={components}
                     options={
                       watchCentre
-                        ? mockVenue[
-                            mockVenue.map((el) => el.centre).indexOf(getValues('centre'))
-                          ].venue.map((el) => el)
+                        ? mockVenue.find((el) => el.centre === watchCentre)?.venue
                         : mockVenue[0].venue
                     }
                     value={
                       watchCentre
-                        ? mockVenue[
-                            mockVenue.map((el) => el.centre).indexOf(watchCentre)
-                          ].venue.find((o) => o.value === value)
+                        ? mockVenue
+                            .find((el) => el.centre === watchCentre)
+                            ?.venue.find((o) => o.value === value)
                         : mockVenue[0].venue.find((o) => o.value === value)
                     }
                     onChange={(val: any) => onChange(val.value)}
@@ -242,12 +235,12 @@ export default function Form() {
                 Food & Beverage
               </FormLabel>
               <Input
-                fontSize="5px"
+                fontSize="12px"
                 variant="flushed"
                 {...register('foodAndBeverage')}
                 placeholder="
                 (Any food and beverage requirements?)"
-                _placeholder={{ fontSize: '0.1rem' }}
+                _placeholder={{ fontSize: '12px', wordWrap: 'wrap' }}
               />
               <FormErrorMessage>
                 {errors.foodAndBeverage && (errors.foodAndBeverage.message as string)}
@@ -261,6 +254,7 @@ export default function Form() {
                 placeholder="Other requirements?"
                 size="sm"
                 h="100%"
+                resize={'none'}
               />
             </FormControl>
           </VStack>
