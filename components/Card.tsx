@@ -124,7 +124,7 @@ export default function Card(props: { data: string }) {
         >
           <Text
             className=" text-navy"
-            fontSize={{base:'10px',sm:'10px',xl:'16px'}}
+            fontSize={{base:'16px',sm:'16px',xl:'16px'}}
             lineHeight={{base:'15px',xl:"22px"}}
             fontWeight="500"
             textTransform="uppercase"
